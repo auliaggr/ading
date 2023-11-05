@@ -38,7 +38,8 @@
                     $cUrl = curl_init();
 
                     $options = array(
-                        CURLOPT_URL => 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-ljevg/endpoint/getAllDosen',
+                        // CURLOPT_URL => 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-ljevg/endpoint/getAllDosen',
+                        CURLOPT_URL => 'https://asia-south1.gcp.data.mongodb-api.com/app/application-2023-abouk/endpoint/getAllDosen',
                         CURLOPT_CUSTOMREQUEST => 'GET',
                         CURLOPT_RETURNTRANSFER => true
                     );

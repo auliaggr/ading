@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $.ajax({
-        url: 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-zygac/endpoint/getPenggunaLainnya',
+        // url: 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-zygac/endpoint/getPenggunaLainnya',
+        url: 'https://asia-south1.gcp.data.mongodb-api.com/app/application-2023-abouk/endpoint/getPenggunaLainnya',
         type: 'GET',
         data: {
             penerima: $('#username').html()
@@ -32,7 +33,8 @@ $(document).ready(function () {
 
     function load_chat() {
         $.ajax({
-            url: 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-zygac/endpoint/getObrolanByPengirimPenerima',
+            // url: 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-zygac/endpoint/getObrolanByPengirimPenerima',
+            url: 'https://asia-south1.gcp.data.mongodb-api.com/app/application-2023-abouk/endpoint/getObrolanByPengirimPenerima',
             type: 'GET',
             data: {
                 pengirim: $('#username').html(),
@@ -92,7 +94,7 @@ $(document).ready(function () {
 
     $('#form-send').submit(function () {
         $.ajax({
-            url: 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-zygac/endpoint/postObrolan',
+            url: 'https://asia-south1.gcp.data.mongodb-api.com/app/application-2023-abouk/endpoint/postObrolan',
             type: 'POST',
             data: {
                 pengirim: $('#username').html(),

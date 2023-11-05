@@ -4,11 +4,12 @@
             $this->load->view('sign');
         }
 
-        public function in() {
+        public function in() {  
             $cUrl = curl_init();
 
             $options = array(
-                CURLOPT_URL => 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-zygac/endpoint/getPenggunaByUsernamePassword?username='.$this->input->get('username').'&password='.md5($this->input->get('password')),
+                // CURLOPT_URL => 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-2023-zygac/endpoint/getPenggunaByUsernamePassword?username='.$this->input->get('username').'&password='.md5($this->input->get('password')),
+                CURLOPT_URL => 'https://asia-south1.gcp.data.mongodb-api.com/app/application-2023-abouk/endpoint/getPenggunaByUsernamePassword?username='.$this->input->get('username').'&password='.md5($this->input->get('password')),
                 CURLOPT_CUSTOMREQUEST => 'GET',
                 CURLOPT_RETURNTRANSFER => true,
                 // CURLOPT_POSTFIELDS => http_build_query(array(
