@@ -87,7 +87,7 @@ $(document).ready(function () {
         $('#list-users .user').removeClass('active');
         $(this).addClass('active');
         
-        load_chat();
+        setInterval(load_chat(), 5000);
 
         $('#form-send').removeClass('d-none');
     });
@@ -114,4 +114,5 @@ $(document).ready(function () {
 
         return false;
     });
+
 });

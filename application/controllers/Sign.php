@@ -43,7 +43,27 @@
         }
 
         public function up() {
+            $cUrl = curl_init();
 
+            $options = array(
+                CURLOPT_URL => 'https://asia-south1.gcp.data.mongodb-api.com/app/application-2023-abouk/endpoint/postPengguna?username='.$this->input->get('username').'&password='.md5($this->input->get('password')),
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                // CURLOPT_RETURNTRANSFER => true,
+                // CURLOPT_POSTFIELDS => http_build_query(array(
+                //     'username' => $_GET['username'],
+                //     'password' => $_GET['password']
+                // ))
+            );
+
+            curl_setopt_array($cUrl, $options);
+
+            $response = curl_exec($cUrl);
+
+            curl_close($cUrl);
+
+            $this -> session -> set_flashdata('status_signup', $response);
+
+            redirect('Sign');
         }
     }
 ?>
