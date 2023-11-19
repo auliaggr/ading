@@ -26,7 +26,7 @@
                 <form id="form_login" action="<?php echo site_url('Sign/in'); ?>">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                        <input type="email" class="form-control" id="username" name="username" placeholder="Username" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -37,11 +37,12 @@
             <div class="card-footer">
                 <div class="row">
                     <div class="col-6 text-start">
-                        <button type="submit" class="btn btn-primary btn_signin" form="form_login" data-url="<?php echo site_url('Sign/in'); ?>">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn_sign" form="form_login" data-url="<?php echo site_url('Sign/in'); ?>">Sign In</button>
                         <button type="reset" class="btn btn-secondary" form="form_login">Reset</button>
                     </div>
                     <div class="col-6 text-end">
-                        <button type="submit" class="btn btn-success btn_signup" form="form_login" data-url="<?php echo site_url('Sign/up'); ?>">Sign Up</button>
+                        <button type="submit" class="btn btn-success btn_sign" form="form_login" data-url="<?php echo site_url('Sign/up'); ?>">Sign Up</button>
+                        <a href="<?php echo site_url('Sign/forgot'); ?>" class="btn btn-warning">Forgot Password</a>
                     </div>
                 </div>
             </div>
