@@ -1,28 +1,23 @@
 <?php
 
-    require_once 'dompdf/autoload.inc.php';
+require_once 'dompdf/autoload.inc.php';
 
-    use Dompdf\dompdf;
-    use Dompdf\options;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
-    class Pdf {
-        public function generate($html, $filename = '', $paper = '', $orientation = '', $stream = TRUE) {
-            $options = new Options();
+class Pdf {
+    public function generate($html, $filename = '', $paper = '', $orientation = '', $stream = TRUE) {
+        $options = new Options();
+        $options->set('isRemoteEnabled', TRUE);
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper($paper, $orientation);
+        $dompdf->render();
 
-            $options -> set('isRemoteEnabled', TRUE);
-
-            $dompdf = new Dompdf();
-
-            $dompdf -> loadHtml($html);
-            $dompdf -> setPaper($paper, $orientation);
-            $dompdf -> render();
-
-            if($stream) {
-                $dompdf -> stream($filename, '.pdf', array('Attachment' => 0));
-            } else {
-                return $dompdf -> output();
-            }
+        if ($stream) {
+            $dompdf->stream($filename . ".pdf", array("Attachment" => 0));
+        } else {
+            return $dompdf->output();
         }
     }
-
-?>
+}
