@@ -1,3 +1,4 @@
+// BELUM KELAR YEAH
 if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
